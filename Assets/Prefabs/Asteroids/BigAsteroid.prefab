@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3260698013664237197
 Transform:
   m_ObjectHideFlags: 0
@@ -113,10 +113,10 @@ MonoBehaviour:
   _maxHealth: 2
   _minMoveSpeed: 2
   _highMoveSpeed: 3
-  _minScale: 0
-  _highScale: 0
-  _minSpinSpeed: 0
-  _highSpinSpeed: 0
+  _minScale: 1
+  _highScale: 2
+  _minSpinSpeed: 10
+  _highSpinSpeed: 40
 --- !u!1 &9123700155877415349
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class SCR_BigAsteroid : SCR_Asteroid
     public override void Respawn(Vector3 spawnPos, Quaternion spawnRotation)
     {
         _moveVector = GetMoveDirection();
+        // Debug.Log(_moveVector);
+        Debug.Log("First Test");
 
         base.Respawn(spawnPos, spawnRotation);
     }
@@ -17,7 +19,8 @@ public class SCR_BigAsteroid : SCR_Asteroid
     {
         base.Despawn();
 
-        if (Random.Range(1, 100) > _spawnSmallAsteroidPercent) SpawnSmallAsteroids();
+        SpawnSmallAsteroids();
+        // if (Random.Range(1, 100) > _spawnSmallAsteroidPercent) SpawnSmallAsteroids();
     }
 
 

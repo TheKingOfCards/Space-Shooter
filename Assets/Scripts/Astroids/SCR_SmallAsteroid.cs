@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SCR_SmallAsteroid : SCR_Asteroid
 {
+    [SerializeField] private int spawnRotationMax;
+
     [HideInInspector] public bool SpawnedFormBigAsteroid = false; 
     [HideInInspector] public Vector3 BigAsteroidDirection;
 
@@ -10,7 +12,11 @@ public class SCR_SmallAsteroid : SCR_Asteroid
     {
         if(SpawnedFormBigAsteroid)
         {
-            return default;
+            int newRotation = Random.Range(-spawnRotationMax, spawnRotationMax);
+
+            transform.rotation = Quaternion.Euler(new(transform.rotation.x, transform.rotation.y, transform.rotation.z + newRotation));
+
+            return transform.forward;
         }
         else return base.GetMoveDirection();
     }
