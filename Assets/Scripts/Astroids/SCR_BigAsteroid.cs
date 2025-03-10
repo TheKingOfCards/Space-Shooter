@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SCR_BigAsteroid : SCR_Asteroid
 {
+    [Range(0, 100)]
     [SerializeField] private int _spawnSmallAsteroidPercent;
     [SerializeField] private int _maxSmallAsteroidAmount;
 
@@ -9,8 +10,6 @@ public class SCR_BigAsteroid : SCR_Asteroid
     public override void Respawn(Vector3 spawnPos, Quaternion spawnRotation)
     {
         _moveVector = GetMoveDirection();
-        // Debug.Log(_moveVector);
-        Debug.Log("First Test");
 
         base.Respawn(spawnPos, spawnRotation);
     }

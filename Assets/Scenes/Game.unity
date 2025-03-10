@@ -485,6 +485,17 @@ MonoBehaviour:
   amount: 20
   pooledObject: {fileID: 7660439874118510384, guid: 972d699d83e9c1a40834acb3471f427e, type: 3}
   objects: []
+--- !u!114 &2006829720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6371213727116768350, guid: 36e5410a56a56ee4ca586454cea1ccfa, type: 3}
+  m_PrefabInstance: {fileID: 1650604921575867634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a79405daa30b604e95c73ad697a93eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2104297699
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +595,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPoolsManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2997235596137418074, guid: 36e5410a56a56ee4ca586454cea1ccfa, type: 3}
+      propertyPath: _bigAstroidPool
+      value: 
+      objectReference: {fileID: 2006829720}
+    - target: {fileID: 2997235596137418074, guid: 36e5410a56a56ee4ca586454cea1ccfa, type: 3}
+      propertyPath: _smallAstroidPool
+      value: 
+      objectReference: {fileID: 1513670438}
     - target: {fileID: 6371213727116768350, guid: 36e5410a56a56ee4ca586454cea1ccfa, type: 3}
       propertyPath: amount
       value: 10
@@ -659,22 +678,6 @@ PrefabInstance:
     - target: {fileID: 3555709078625237169, guid: 5da3ff819c5834847bfb9c36debb0a2b, type: 3}
       propertyPath: m_Name
       value: BigAsteroid
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296437708277902429, guid: 5da3ff819c5834847bfb9c36debb0a2b, type: 3}
-      propertyPath: _minScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296437708277902429, guid: 5da3ff819c5834847bfb9c36debb0a2b, type: 3}
-      propertyPath: _highScale
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296437708277902429, guid: 5da3ff819c5834847bfb9c36debb0a2b, type: 3}
-      propertyPath: _minSpinSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296437708277902429, guid: 5da3ff819c5834847bfb9c36debb0a2b, type: 3}
-      propertyPath: _highSpinSpeed
-      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

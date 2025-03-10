@@ -66,7 +66,6 @@ public class SCR_Asteroid : SCR_PooledObject
 
     public override void Respawn(Vector3 spawnPos, Quaternion spawnRotation)
     {
-        Debug.Log("Secound test");
         _health = _maxHealth;
 
         _moveSpeed = Random.Range(_minMoveSpeed, _highMoveSpeed);

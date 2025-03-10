@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5434807279203492809}
   - component: {fileID: 9002783870584044551}
   - component: {fileID: 7638644981040722497}
-  - component: {fileID: 7660439874118510384}
+  - component: {fileID: 6148277069682805544}
   m_Layer: 0
   m_Name: SmallAsteroid
   m_TagString: Untagged
@@ -98,7 +98,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.2
---- !u!114 &7660439874118510384
+--- !u!114 &6148277069682805544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4001196709162136409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3a46c4cdfdbac428047ba427858a2d, type: 3}
+  m_Script: {fileID: 11500000, guid: c25982fb20a60e7499eeff2069401216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1
@@ -117,6 +117,9 @@ MonoBehaviour:
   _highScale: 2
   _minSpinSpeed: 20
   _highSpinSpeed: 50
+  spawnRotationMax: 90
+  SpawnedFormBigAsteroid: 0
+  BigAsteroidDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &8444212890271787196
 GameObject:
   m_ObjectHideFlags: 0
