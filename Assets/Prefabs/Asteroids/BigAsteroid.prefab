@@ -114,7 +114,7 @@ MonoBehaviour:
   _minMoveSpeed: 2
   _highMoveSpeed: 4
   _minScale: 2
-  _highScale: 4
+  _highScale: 3
   _minSpinSpeed: 1
   _highSpinSpeed: 2
   _spawnSmallAsteroidPercent: 50

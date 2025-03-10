@@ -24,9 +24,7 @@ public class SCR_GameManager : SCR_Statemachine
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Start");
             ObjectPoolsManager.BigAstroidPool.GetDespawnedObject().Respawn(new Vector3(9, -5, 0), Quaternion.Euler(0, 0, 0));
-            // ObjectPoolsManager.SmallAstroidPool.GetDespawnedObject().Respawn(new Vector3(9, 5, 0), Quaternion.Euler(0, 0, 0));
         }
     }
 

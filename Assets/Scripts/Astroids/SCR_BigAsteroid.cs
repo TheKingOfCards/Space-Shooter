@@ -25,13 +25,13 @@ public class SCR_BigAsteroid : SCR_Asteroid
 
     private void SpawnSmallAsteroids()
     {
-        int spawnAmount = Random.Range(1, _maxSmallAsteroidAmount);
+        // int spawnAmount = Random.Range(1, _maxSmallAsteroidAmount);
+        int spawnAmount = _maxSmallAsteroidAmount;
 
         for (int i = 0; i < spawnAmount; i++)
         {
             SCR_SmallAsteroid smallAsteroid = SCR_GameManager.Instance.ObjectPoolsManager.SmallAstroidPool.GetDespawnedObject() as SCR_SmallAsteroid;
             smallAsteroid.SpawnedFormBigAsteroid = true;
-            smallAsteroid.BigAsteroidDirection = _moveVector;
             smallAsteroid.Respawn(transform.position, transform.rotation);
         }
     }

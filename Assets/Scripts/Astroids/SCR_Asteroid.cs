@@ -20,14 +20,7 @@ public class SCR_Asteroid : SCR_PooledObject
     private void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
-        Respawn(transform.position, Quaternion.identity);
     }
-
-
-    // void Update()
-    // {
-    //     UpdateAstroid();
-    // }
 
 
     public override void UpdatePooledObject()
