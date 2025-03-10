@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class SCR_Player : MonoBehaviour
 {
-    SCR_PlayerController playerController;
-    [SerializeField] public SCR_GunController gunController;
+    SCR_MovementController playerController;
 
     void Start()
     {
-        playerController = GetComponent<SCR_PlayerController>();
+        playerController = GetComponent<SCR_MovementController>();
     }
 
 

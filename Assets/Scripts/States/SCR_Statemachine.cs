@@ -41,4 +41,12 @@ public class SCR_Statemachine : MonoBehaviour
             }
         }
     }
+
+
+    public bool CheckCurrentState<T>() where T : SCR_State
+    {
+        if(currentState is T) return true;
+
+        return false;
+    }
 }

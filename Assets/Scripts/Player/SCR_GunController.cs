@@ -7,8 +7,6 @@ public class SCR_GunController : MonoBehaviour
     [SerializeField] private float _primaryAttackCooldown; 
     [SerializeField] private Transform _gunTransform;
     private bool _canPrimaryAttack = true;
-
-    public void SwitchAttackState(bool aBool) => _canPrimaryAttack = aBool;
     
 
     private void OnPrimaryAttack()

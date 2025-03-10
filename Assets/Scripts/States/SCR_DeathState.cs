@@ -1,35 +1,32 @@
 using UnityEngine;
 
-public class SCR_PlayingState : SCR_State
+public class SCR_DeathState : SCR_State
 {
-    [SerializeField] SCR_Player player;
-    
+    [SerializeField] private GameObject _deathUI;
+
 
     public override void EnterState()
     {
         base.EnterState();
+        _deathUI.SetActive(true);
     }
 
 
     public override void UpdateState()
     {
         base.UpdateState();
-
-        player.UpdatePlayer();
-        SCR_GameManager.Instance.ObjectPoolsManager.UpdateObjectPools();
     }
 
 
     public override void FixedUpdateState()
     {
         base.FixedUpdateState();
-
-        player.FixedUpdatePlayer();
     }
 
 
     public override void ExitState()
     {
         base.ExitState();
+        _deathUI.SetActive(false);
     }
 }

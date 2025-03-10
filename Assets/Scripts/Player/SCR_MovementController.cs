@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SCR_PlayerController : MonoBehaviour
+public class SCR_MovementController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] float speed;
