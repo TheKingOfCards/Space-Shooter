@@ -9,6 +9,11 @@ public class SCR_DeathState : SCR_State
     {
         base.EnterState();
         _deathUI.SetActive(true);
+
+        foreach (ObjectPool objectPool in SCR_GameManager.Instance.ObjectPoolsManager.AllObjectPools)
+        {
+            objectPool.DespawnActiveObjects();
+        }
     }
 
 

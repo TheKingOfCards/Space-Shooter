@@ -5,6 +5,7 @@ using UnityEngine;
 public class SCR_Asteroid : SCR_PooledObject
 {
     [SerializeField] private int _maxHealth;
+    [SerializeField] private int _damage;
     private int _health;
     private float _spinSpeed;
     private float _moveSpeed;
@@ -71,5 +72,17 @@ public class SCR_Asteroid : SCR_PooledObject
         _spinSpeed = Random.Range(_minSpinSpeed, _highSpinSpeed) * spinDirection;
 
         base.Respawn(spawnPos, spawnRotation);
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.CompareTag("Player"))
+        {
+            SCR_PlayerHealth playerHealth = collider.GetComponent<SCR_PlayerHealth>();
+            playerHealth.TakeDamage(_damage);
+
+            Despawn();
+        }
     }
 }

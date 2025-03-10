@@ -4,20 +4,16 @@ public class SCR_SmallAsteroid : SCR_Asteroid
 {
     [SerializeField] private int spawnRotationMax;
     [HideInInspector] public bool SpawnedFormBigAsteroid = false; 
-    bool firstpass = false;
 
 
     protected override Vector3 GetMoveDirection()
     {
-        Debug.Log(firstpass);
-        firstpass = true;
         if(SpawnedFormBigAsteroid)
         {
             int newRotation = Random.Range(-spawnRotationMax, spawnRotationMax);
 
             transform.rotation = Quaternion.Euler(new(transform.rotation.x, transform.rotation.y, transform.rotation.z + newRotation));
 
-            Debug.Log(transform.up);
             return transform.up;
         }
         else return base.GetMoveDirection();

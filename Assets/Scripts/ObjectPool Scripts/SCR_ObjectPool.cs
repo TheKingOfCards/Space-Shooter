@@ -18,9 +18,9 @@ public class ObjectPool : MonoBehaviour
     {
         for (int i = 0; i < objects.Count; i++)
         {
-            if(!objects[i].gameObject.activeInHierarchy) return objects[i];
-            
-            if(i == objects.Count - 1)
+            if (!objects[i].gameObject.activeInHierarchy) return objects[i];
+
+            if (i == objects.Count - 1)
             {
                 TopUpPool();
                 i = 0;
@@ -28,6 +28,16 @@ public class ObjectPool : MonoBehaviour
         }
 
         return null;
+    }
+
+
+    public void DespawnActiveObjects()
+    {
+        for (int i = 0; i < objects.Count; i++)
+        {
+            if (objects[i].gameObject.activeInHierarchy)
+                objects[i].Despawn();
+        }
     }
 
 

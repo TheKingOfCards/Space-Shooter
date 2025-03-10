@@ -31,5 +31,7 @@ public class SCR_PlayingState : SCR_State
     public override void ExitState()
     {
         base.ExitState();
+
+        player.MovementController.StopPlayerMovement();
     }
 }

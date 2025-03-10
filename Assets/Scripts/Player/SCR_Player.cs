@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class SCR_Player : MonoBehaviour
 {
-    SCR_MovementController playerController;
+    [HideInInspector] public SCR_MovementController MovementController;
+
 
     void Start()
     {
-        playerController = GetComponent<SCR_MovementController>();
+        MovementController = GetComponent<SCR_MovementController>();
     }
 
 
@@ -18,6 +19,6 @@ public class SCR_Player : MonoBehaviour
 
     public void FixedUpdatePlayer()
     {
-        playerController.FixedUpdatePlayerController();
+        MovementController.FixedUpdateMovement();
     }
 }

@@ -9,6 +9,8 @@ public class SCR_ObjectPoolsManager : MonoBehaviour
     private List<ObjectPool> _allObjectPools = new();
 
     // Getters
+    public List<ObjectPool> AllObjectPools { get => _allObjectPools; }
+
     public ObjectPool BulletPool { get => _bulletPool; }
     public ObjectPool BigAstroidPool { get => _bigAstroidPool; }
     public ObjectPool SmallAstroidPool { get => _smallAstroidPool; }
@@ -16,7 +18,7 @@ public class SCR_ObjectPoolsManager : MonoBehaviour
 
 
     private void Start()
-    {
+    { //* Order is important
         _allObjectPools.Add(_bulletPool);
         _allObjectPools.Add(_bigAstroidPool);
         _allObjectPools.Add(_smallAstroidPool);
@@ -29,7 +31,7 @@ public class SCR_ObjectPoolsManager : MonoBehaviour
         {
             foreach (SCR_PooledObject obj in objectPool.objects)
             {
-                if(obj.isActiveAndEnabled) obj.UpdatePooledObject();
+                if (obj.isActiveAndEnabled) obj.UpdatePooledObject();
             }
         }
     }

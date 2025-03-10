@@ -1,16 +1,17 @@
+using System.IO.Compression;
 using UnityEngine;
 
 public class SCR_MovementController : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float speed;
-    [SerializeField] float cappedVelocity;
-    [SerializeField] float dampingAmount;
-    Rigidbody2D rb2d;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _cappedVelocity;
+    [SerializeField] private float _dampingAmount;
+    private Rigidbody2D _rb2d;
 
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        _rb2d = GetComponent<Rigidbody2D>();
     }
 
 
@@ -19,7 +20,7 @@ public class SCR_MovementController : MonoBehaviour
     }
 
 
-    public void FixedUpdatePlayerController()
+    public void FixedUpdateMovement()
     {
         Movement();
         RotateToMouse();
@@ -32,9 +33,9 @@ public class SCR_MovementController : MonoBehaviour
         movement.Normalize();
 
         if (movement.magnitude <= 0) SlowDownPlayer();
-        else rb2d.linearDamping = 0;
+        else _rb2d.linearDamping = 0;
 
-        rb2d.AddForce(movement * speed, ForceMode2D.Impulse);
+        _rb2d.AddForce(movement * _speed, ForceMode2D.Impulse);
 
         CappingSpeed();
     }
@@ -42,23 +43,23 @@ public class SCR_MovementController : MonoBehaviour
 
     void CappingSpeed()
     {
-        if (rb2d.linearVelocityX > cappedVelocity || rb2d.linearVelocityX < -cappedVelocity)
+        if (_rb2d.linearVelocityX > _cappedVelocity || _rb2d.linearVelocityX < -_cappedVelocity)
         {
-            if (rb2d.linearVelocityX > 0) rb2d.linearVelocityX = cappedVelocity;
-            else rb2d.linearVelocityX = -cappedVelocity;
+            if (_rb2d.linearVelocityX > 0) _rb2d.linearVelocityX = _cappedVelocity;
+            else _rb2d.linearVelocityX = -_cappedVelocity;
         }
 
-        if (rb2d.linearVelocityY > cappedVelocity || rb2d.linearVelocityY < -cappedVelocity)
+        if (_rb2d.linearVelocityY > _cappedVelocity || _rb2d.linearVelocityY < -_cappedVelocity)
         {
-            if (rb2d.linearVelocityY > 0) rb2d.linearVelocityY = cappedVelocity;
-            else rb2d.linearVelocityY = -cappedVelocity;
+            if (_rb2d.linearVelocityY > 0) _rb2d.linearVelocityY = _cappedVelocity;
+            else _rb2d.linearVelocityY = -_cappedVelocity;
         }
     }
 
 
     void SlowDownPlayer()
     {
-        rb2d.linearDamping += dampingAmount * Time.deltaTime;
+        _rb2d.linearDamping += _dampingAmount * Time.deltaTime;
     }
 
 
@@ -71,4 +72,7 @@ public class SCR_MovementController : MonoBehaviour
 
         transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
     }
+
+
+    public void StopPlayerMovement() => _rb2d.linearVelocity = new(0, 0);
 }

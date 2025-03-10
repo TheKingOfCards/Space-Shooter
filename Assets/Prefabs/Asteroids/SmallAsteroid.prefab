@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1
+  _damage: 1
   _minMoveSpeed: 4
   _highMoveSpeed: 6
   _minScale: 1
@@ -119,7 +120,6 @@ MonoBehaviour:
   _highSpinSpeed: 50
   spawnRotationMax: 90
   SpawnedFormBigAsteroid: 0
-  BigAsteroidDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &8444212890271787196
 GameObject:
   m_ObjectHideFlags: 0

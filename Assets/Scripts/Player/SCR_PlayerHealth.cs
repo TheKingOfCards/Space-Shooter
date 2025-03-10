@@ -6,10 +6,16 @@ public class SCR_PlayerHealth : MonoBehaviour
     private int _health;
 
 
-    public void TakeDamage(int damage)
+    private void Start()
     {
         _health = _maxHealth;
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        _health -= damage;
          
-        if(_health <= 0) SCR_GameManager.Instance.SwitchState<SCR_PlayingState>();
+        if(_health <= 0) SCR_GameManager.Instance.SwitchState<SCR_DeathState>();
     }
 }

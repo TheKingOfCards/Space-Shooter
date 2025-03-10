@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 2
+  _damage: 2
   _minMoveSpeed: 2
   _highMoveSpeed: 4
   _minScale: 2
