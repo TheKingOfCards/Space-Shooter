@@ -18,15 +18,16 @@ public class SCR_BigAsteroid : SCR_Asteroid
     {
         base.Despawn();
 
-        SpawnSmallAsteroids();
-        // if (Random.Range(1, 100) > _spawnSmallAsteroidPercent) SpawnSmallAsteroids();
+        if (Random.Range(1, 100) > _spawnSmallAsteroidPercent)
+            SpawnSmallAsteroids();
+
+        SCR_GameManager.Instance.playerTransform.GetComponent<SCR_Player>().UpdatePlayerScore(2);
     }
 
 
     private void SpawnSmallAsteroids()
     {
-        // int spawnAmount = Random.Range(1, _maxSmallAsteroidAmount);
-        int spawnAmount = _maxSmallAsteroidAmount;
+        int spawnAmount = Random.Range(1, _maxSmallAsteroidAmount + 1);
 
         for (int i = 0; i < spawnAmount; i++)
         {

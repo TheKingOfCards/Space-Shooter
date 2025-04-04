@@ -114,8 +114,8 @@ MonoBehaviour:
   _damage: 1
   _minMoveSpeed: 4
   _highMoveSpeed: 6
-  _minScale: 1
-  _highScale: 2
+  _minScale: 0.5
+  _highScale: 1.5
   _minSpinSpeed: 20
   _highSpinSpeed: 50
   spawnRotationMax: 90

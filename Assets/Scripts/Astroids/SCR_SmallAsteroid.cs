@@ -26,4 +26,12 @@ public class SCR_SmallAsteroid : SCR_Asteroid
 
         base.Respawn(spawnPos, spawnRotation);
     }
+
+
+    public override void Despawn()
+    {
+        base.Despawn();
+
+        SCR_GameManager.Instance.playerTransform.GetComponent<SCR_Player>().UpdatePlayerScore(1);
+    }
 }

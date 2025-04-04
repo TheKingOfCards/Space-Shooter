@@ -692,6 +692,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "NoInputs",
+            "id": "6d2c8277-3175-452c-b58e-d6676a583845",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": [
